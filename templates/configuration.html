@@ -1,1 +1,21 @@
-<p>Configuration</p>
+<h1>{{title}}</h1>
+<h1>{{subtitle}}</h1>
+<div>
+    <form novalidate>
+        <div>
+            <label >Ville</label>
+        <input type="text" name="ville" id="ville" ng-model="ville">
+            <button ng-click="searchCity(ville)">Rechercher</button>
+    </div>
+        <div>
+            <label>Villes prises en charge</label>
+            <ul>
+                <li ng-repeate="city in cities">
+                    {{city}}
+                </li>
+            </ul>
+        </div>
+        
+        
+    </form>
+</div>
