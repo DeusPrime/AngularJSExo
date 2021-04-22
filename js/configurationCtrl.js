@@ -14,12 +14,18 @@ app.controller("configurationCtrl", function($scope, $location, $routeParams, we
 
     $scope.saveCity = function(city){
 
-        localStorage.setItem("lon", city.centre.coordinates[0])
-        localStorage.setItem("lat", city.centre.coordinates[1])
-
-        console.log(localStorage.getItem("lon"));
-        console.log(localStorage.getItem("lat"));
+        localStorage.setItem("city", JSON.stringify(city))
 
         $location.path("/carte/");
+    }
+
+    $scope.geolocMe = function(){
+
+        navigator.geolocation.getCurrentPosition(function(position) {
+            let city = {nom: "", centre: {coordinates: [position.coords.longitude, position.coords.latitude]}, contour: {coordinates: [[]]}};
+            localStorage.setItem("city", JSON.stringify(city))
+          });
+
+          $location.path("/carte/");
     }
 });
