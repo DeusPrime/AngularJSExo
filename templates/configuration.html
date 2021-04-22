@@ -6,11 +6,11 @@
         <input type="text" name="ville" id="ville" ng-model="ville">
             <button ng-click="searchCity(ville)">Rechercher</button>
     </div>
-        <div>
+        <div ng-if="cities">
             <label>Villes prises en charge</label>
-            <ul ng-if="cities">
-                <li ng-repeate="city in cities">
-                    {{city}}
+            <ul>
+                <li ng-repeat="city in cities" ng-click="saveCity(city)">
+                    {{city.nom}}
                 </li>
             </ul>
         </div>
