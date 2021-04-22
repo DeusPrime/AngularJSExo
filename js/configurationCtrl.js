@@ -3,7 +3,7 @@ app.controller("configurationCtrl", function($scope, $location, $routeParams, we
     $scope.cities = false;
 
     $scope.searchCity = function(city) {
-        weather.searchCity(city)
+        weather.searchCityByName(city)
         .then(function (response) {
             // console.log(response)
             $scope.cities = response
@@ -22,10 +22,15 @@ app.controller("configurationCtrl", function($scope, $location, $routeParams, we
     $scope.geolocMe = function(){
 
         navigator.geolocation.getCurrentPosition(function(position) {
-            let city = {nom: "", centre: {coordinates: [position.coords.longitude, position.coords.latitude]}, contour: {coordinates: [[]]}};
-            localStorage.setItem("city", JSON.stringify(city))
+
+            weather.searchCityByLocation(position.coords.longitude, position.coords.latitude)
+            .then(function (response) {
+                // console.log(response)
+                localStorage.setItem("city", JSON.stringify(response[0]))
+                $location.path("/carte/");
+            })
           });
 
-          $location.path("/carte/");
+          
     }
 });
