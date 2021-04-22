@@ -1,4 +1,4 @@
 app.controller("homeCtrl", function($scope, $routeParams) {
-    $scope.title = "Homeland";
+    $scope.title = "Home";
 
 });
