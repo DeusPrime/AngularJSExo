@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-route.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-animate.js"></script>
+    <title>Meteo</title>
+</head>
+<body ng-app="app" ng-cloak>
+    <!-- Menu de navigation. Angular ajoute un # devant les url -->
+
+    <nav class="navbar navbar-expand navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <!-- <img src="../img/crm-icon-0.jpg" alt="" width="30" height="24" class="d-inline-block align-text-top"> -->
+                Le bo temps
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link active" aria-current="page" href="#/">Accueil</a>
+                    <a class="nav-link" href="#/meteo">Meteo</a>
+                    <a class="nav-link" href="#/prevision">Prevision</a>
+                    <a class="nav-link" href="#/carte">Carte</a>
+                    <a class="nav-link" href="#/configuration">Configuration</a>
+                </div>
+            </div>
+            <!-- <div class="nav pull-right">
+                    <button onclick="deconnexion()" type="button" class="btn btn-primary navbar-btn">
+                      <span class="glyphicon glyphicon-plus"></span> 
+                      Déconnexion
+                    </button>
+                    <i class="fas fa-power-off"></i>
+                </div> -->
+        </div>
+    </nav>
+
+    <ng-view></ng-view>
+
+    <script src="../js/app.js"></script>
+    <script src="../js/weatherSvc.js"></script>
+    <script src="../js/homeCtrl.js"></script>
+    <script src="../js/carteCtrl.js"></script>
+    <script src="../js/meteoCtrl.js"></script>
+    <script src="../js/previsionCtrl.js"></script>
+    <script src="../js/configurationCtrl.js"></script>
+    <script src="../js/creditCtrl.js"></script>
+    <script src="../js/mentionLegaleCtrl.js"></script>
+
+
+</body>
+</html>
