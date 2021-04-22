@@ -21,7 +21,7 @@ app.config(function($routeProvider){
         templateUrl: "../templates/prevision.html",
         controller: "previsionCtrl"
     })
-    .when("/configuration&:title&:subtitle",{
+    .when("/configuration",{
         templateUrl: "../templates/configuration.html",
         controller: "configurationCtrl"
     })

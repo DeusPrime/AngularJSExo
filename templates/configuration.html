@@ -1,5 +1,4 @@
 <h1>{{title}}</h1>
-<h1>{{subtitle}}</h1>
 <div>
     <form novalidate>
         <div>
@@ -9,7 +8,7 @@
     </div>
         <div>
             <label>Villes prises en charge</label>
-            <ul>
+            <ul ng-if="cities">
                 <li ng-repeate="city in cities">
                     {{city}}
                 </li>
